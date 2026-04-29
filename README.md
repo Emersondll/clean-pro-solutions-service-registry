@@ -1,43 +1,26 @@
-﻿# clean-pro-solutions-service-registry
+# Clean Pro Solutions - Service Registry 🌐
 
-Servidor de Descoberta Eureka para o ecossistema de microserviÃ§os.
+## 🎯 Papel no Ecossistema
+O **Service Registry** é o catálogo vivo de todos os microserviços em execução. Baseado no Netflix Eureka, ele permite que:
+- Microserviços se encontrem sem conhecer IPs fixos.
+- Haja balanceamento de carga entre instâncias do mesmo serviço.
+- O ecossistema seja resiliente e escalável.
 
-## ðŸš€ Tecnologias
-- **Java 21**
-- **Spring Boot 3.3.4**
-- **Spring Cloud (Eureka, OpenFeign, Config)**
-- **MongoDB** (PersistÃªncia de dados)
-- **RabbitMQ** (Mensageria assÃ­ncrona)
-- **JaCoCo** (RelatÃ³rios de cobertura)
-- **SpringDoc OpenAPI** (DocumentaÃ§Ã£o Swagger)
+## 🚀 Tecnologias
+- **Java 21** & **Spring Boot 3.3.4**
+- **Spring Cloud Netflix Eureka Server**
 
-## ðŸ“Š Qualidade e Testes
-Este projeto possui uma regra de integridade de cÃ³digo rigorosa:
-- **Cobertura MÃ­nima**: 80% de instruÃ§Ãµes cobertas (MandatÃ³rio).
-- **Enforcement**: O build falha automaticamente via plugin JaCoCo na fase de erify caso a cobertura seja inferior ao limite.
+## 🛠️ Como Executar
 
-## ðŸ› ï¸ Como rodar
+### 1. Execução Isolada (Individual)
+Para rodar o registry:
+```bash
+docker-compose up -d --build
+```
+O painel do Eureka estará disponível em `http://localhost:8761`.
 
-### PrÃ©-requisitos
-- Docker e Docker Compose instalados.
-- JDK 21 instalado localmente (opcional se usar Docker).
-
-### Via Maven (Local)
-`ash
-mvn clean verify
-`
-
-### Via Docker
-`ash
-docker build -t clean-pro-solutions-service-registry .
-`
-
-## ðŸ—ï¸ Arquitetura
-O serviÃ§o segue os princÃ­pios de **Clean Architecture** e **Domain-Driven Design (DDD)**, com as seguintes camadas:
-- **Controller**: Porta de entrada para requisiÃ§Ãµes REST.
-- **Service**: Regras de negÃ³cio e orquestraÃ§Ã£o.
-- **Repository**: PersistÃªncia desacoplada via Spring Data.
-- **Document/Entity**: Modelagem do domÃ­nio.
+### 2. Execução Integrada
+Este serviço é o primeiro a subir na orquestração principal [Clean Pro Platform](../README.md).
 
 ---
-Â© 2026 Clean Pro Solutions - Todos os direitos reservados.
+© 2026 Clean Pro Solutions - Desenvolvido por Emerson Lima.
